@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package jme3test.helloworld;
+package launch;
 import com.jme3.app.SimpleApplication;
 import com.jme3.material.Material;
 import com.jme3.math.ColorRGBA;
@@ -47,7 +47,7 @@ public class HelloNode extends SimpleApplication {
         /** Attach the two boxes to the *pivot* node. (And transitively to the root node.) */
         sceneNode.attachChild(green);
         sceneNode.attachChild(red);
-        
+        rootNode.detachChildNamed("pivot");
         /** Rotate the pivot node: Note that both boxes have rotated! */
         red.rotate(1f,1f,1f);
     }

@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package jme3test.helloworld;
+package launch;
 
 import com.jme3.app.SimpleApplication;
 import com.jme3.font.BitmapText;
@@ -19,14 +19,14 @@ import de.jarnbjo.oggtools.Player;
  *
  * @author Jacob
  */
-public class HelloAssets extends SimpleApplication {
+public class Launch extends SimpleApplication {
 
     private Geometry player;
     private Spatial ninja;
     private Spatial floor;
 
     public static void main(String[] args) {
-        HelloAssets app = new HelloAssets();
+        Launch app = new Launch();
         app.start();
     }
 
