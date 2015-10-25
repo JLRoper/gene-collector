@@ -5,15 +5,19 @@
  */
 package modules;
 
-import com.jme3.material.Material;
-import com.jme3.scene.Mesh;
+import com.jme3.asset.AssetManager;
+import com.jme3.math.Vector3f;
 import com.jme3.scene.Spatial;
+import com.jme3.material.Material;
 
 /**
  *
- * @author Jacob
+ * @author Jacob Wrapper class for all individual units/structures in game.
  */
 public class Module {
+
+    protected AssetManager assetManager;
+    Material mat_default = new Material(assetManager, "Common/MatDefs/Misc/ShowNormals.j3md");
 
     private String moduleName;
     private Material material; // pattern
@@ -25,16 +29,26 @@ public class Module {
     }
 
     public void Module(String moduleName, Material material, Spatial spatial) {
-        this.moduleName = moduleName;
-        this.material = material;
-        this.spatial = spatial;
+        setModuleName(moduleName);
+        setMaterial(material);
+        setSpacial(spatial);
     }
 
     public boolean initialize() {
-        if (spatial != null && material != null) {
-            spatial.setMaterial(material);
+        boolean isInitialized = false; 
+        Vector3f vect = spatial.getLocalScale();
+        System.out.println(vect.y);
+        if (spatial != null) {
+            if (material != null) {
+                spatial.setMaterial(material);
+            } else {
+                spatial.setMaterial(mat_default);
+            }
+            isInitialized = true;
+        } else {
+            isInitialized = false;
         }
-        return false;
+        return isInitialized;
     }
 
     public void setSpacial(Spatial spacial) {
