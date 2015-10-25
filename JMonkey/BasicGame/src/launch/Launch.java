@@ -78,6 +78,7 @@ public class Launch extends SimpleApplication {
         testModule.setSpacial(assetManager.loadModel("Models/Ninja/Ninja.mesh.xml"));
         testModule.setMaterial(mat_brick);
         testModule.getSpatial().setLocalTranslation(5.0f, 2.0f, 5.0f);
+        testModule.getSpatial().scale(0.05f);
         testModule.initialize();
         rootNode.attachChild(testModule.getSpatial());
 

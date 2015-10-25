@@ -5,6 +5,7 @@
  */
 package modules;
 
+
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -14,24 +15,23 @@ import java.util.HashMap;
  */
 public class ModuleManager {
 
-    private ArrayList<Key> moduleKeyRing;
-    private HashMap<Key, Module> ModuleBank;
+    private ArrayList<ModKey> modKeyRing;
+    private HashMap<ModKey, Module> ModuleBank;
 
     public boolean initializeModuleBank() {
         boolean returnSuccess = false;
         if (ModuleBank == null) {
-            ModuleBank = new HashMap<Key, Module>();
-            moduleKeyRing = new ArrayList<Key>();
-        } else {
+            ModuleBank = new HashMap<ModKey, Module>();
+            modKeyRing = new ArrayList<ModKey>();
             returnSuccess = true;
-        }
+        } 
         return returnSuccess;
     }
 
     @Override
     public String toString() {
-        if(!moduleKeyRing.isEmpty()){
-            return moduleKeyRing.toString();
+        if(!modKeyRing.isEmpty()){
+            return modKeyRing.toString();
         }    
         return "NO KEYS";
     }
