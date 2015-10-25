@@ -13,7 +13,7 @@ import com.jme3.scene.Geometry;
 import com.jme3.scene.Spatial;
 import com.jme3.scene.shape.Box;
 import com.jme3.material.Material;
-import de.jarnbjo.oggtools.Player;
+import modules.Module;
 
 /**
  *
@@ -72,6 +72,14 @@ public class Launch extends SimpleApplication {
         ninja.rotate(0.0f, -3.0f, 0.0f);
         ninja.setLocalTranslation(0.0f, 1.0f, -2.0f);
         rootNode.attachChild(ninja);
+        
+        //MODULE TEST 
+        Module testModule = new Module();
+        testModule.setSpacial(assetManager.loadModel("Models/Ninja/Ninja.mesh.xml"));
+        testModule.setMaterial(mat_brick);
+        testModule.getSpatial().setLocalTranslation(5.0f, 2.0f, 5.0f);
+        testModule.initialize();
+        rootNode.attachChild(testModule.getSpatial());
 
         // You must add a light to make the model visible
         DirectionalLight sun = new DirectionalLight();
