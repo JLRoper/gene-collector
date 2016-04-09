@@ -6,7 +6,7 @@ $global:ie.visible = $true
 
 
 <#NavigateTo "http://www.google.com/advanced_search" 
-
+SetElementValueByName "as_oq" "Unisys Fenix PLDA"
 SetElementValueByName "as_oq" "Unisys Fenix PLDA"
 ClickElementByTagName "input" "14" #>
 NavigateTo "http://www.herbal-salvation.com/shop/soap-ingredients/plantation-maeng-da/" 
